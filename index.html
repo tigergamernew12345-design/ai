@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI, Explained</title>
+<style>
+  :root {
+    --bg: #0f1020;
+    --panel: #181a33;
+    --text: #eceefc;
+    --muted: #9aa0c8;
+    --accent: #7c8cff;
+    --accent2: #4de0c1;
+    --warn: #ffb86b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow: hidden; }
+  .deck { height: 100%; position: relative; }
+  .slide {
+    position: absolute; inset: 0; padding: 7vh 8vw 10vh;
+    display: flex; flex-direction: column; justify-content: center; gap: 2.5vh;
+    opacity: 0; transform: translateX(40px); pointer-events: none;
+    transition: opacity .4s ease, transform .4s ease;
+    background: radial-gradient(1200px 600px at 85% -10%, #232759 0%, transparent 60%);
+  }
+  .slide.active { opacity: 1; transform: none; pointer-events: auto; }
+  .slide.past { transform: translateX(-40px); }
+  h1 { font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1.05; letter-spacing: -0.02em; }
